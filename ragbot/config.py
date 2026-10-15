@@ -1,0 +1,26 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+OPENAI_CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+OPENAI_EMBED_MODEL = os.getenv("OPENAI_EMBED_MODEL", "text-embedding-3-small")
+
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "")
+AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY", "")
+AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "")
+AZURE_CHAT_DEPLOYMENT = os.getenv("AZURE_CHAT_DEPLOYMENT", "")
+AZURE_EMBED_DEPLOYMENT = os.getenv("AZURE_EMBED_DEPLOYMENT", "")
+
+CHROMA_DIR = os.getenv("CHROMA_DIR", ".chroma")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME", "docs")
+
+CHUNK_SIZE = 500
+CHUNK_OVERLAP = 80
+TOP_K = 4
+MAX_DISTANCE = 0.65
+HISTORY_TURNS = 6
+
+USE_AZURE = bool(AZURE_OPENAI_ENDPOINT)
